@@ -1,3 +1,8 @@
+/**
+ * @description: Function checks if passed argument is valid array or not
+ * @argument: Function accepts argument of type "Array" Object
+ * @returns: Function return value of type "boolean"
+ * */ 
 const isValidArray = (arr) => {
   if (arr && arr.constructor.name === "Array") {
     return true;
@@ -5,6 +10,11 @@ const isValidArray = (arr) => {
   return false;
 };
 
+/**
+ * @description: Function checks if passed array is empty or not
+ * @argument: Function accepts argument of type "Array" Object
+ * @returns: Function return value of type "boolean"
+ * */ 
 const isEmpty = (arr) => {
   if (!arr.length) {
     return false;
@@ -15,6 +25,11 @@ const isEmpty = (arr) => {
   return true;
 };
 
+/**
+ * @description: Function calculate the day when the stock price in minimum
+ * @argument: Function accepst argument of type "Array" Object
+ * @returns: Function return value of type "Object" with min stock price and respective day.
+ * */ 
 const minStockPrice = (para) => {
   let def = 10001;
   let index = -1;
@@ -27,6 +42,11 @@ const minStockPrice = (para) => {
   return { value: def, index };
 };
 
+/**
+ * @description: Function calcuate the max profit between the stock buting and selling dates 
+ * @argument: Function accepst argument of type "Array" Object
+ * @returns: Function return value of type "Number"
+ * */ 
 const maxProfit = (prices) => {
   if (!isValidArray(prices) && isEmpty(prices)) {
     return "Passsed argument is not a valid array!";
@@ -46,5 +66,8 @@ const maxProfit = (prices) => {
   return prices[bestStockSellingDay] - suggestedBuyDate.value;
 };
 
+// Initializing an array with stock prices
 const prices = [7,1,5,3,6,4,6];
+
+// Calling maxProfit function with array as a parameter and logging the returned result
 console.log(maxProfit(prices));
